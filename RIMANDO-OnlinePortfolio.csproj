@@ -7,4 +7,8 @@
     <RootNamespace>RIMANDO_OnlinePortfolio</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="Views\Portfolio\Index2.cshtml" />
+  </ItemGroup>
+
 </Project>
