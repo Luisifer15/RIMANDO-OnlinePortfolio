@@ -71,6 +71,9 @@ body {
     background-color: #260d13;
     padding-left: 20px;
     padding-right: 20px;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 
@@ -147,10 +150,6 @@ body {
     grid-gap: 5px;
 }
 
-.mainpage-rightcol {
-    margin-left: 5px; 
-    margin-right: 60px;
-}
 
 .leftcol-basicinfo {
     display: grid;
@@ -171,25 +170,52 @@ body {
 }
 
 
-.UserImg {
+#UserImg {
+    border: 2px solid;
     max-height: 200px;
     max-width: 200px;
     object-fit: contain;
 }
 
+#UserImg:hover {
+    animation: glitch 1s linear infinite;
+}
+
+
+
+#UserImg:hover:before, #UserImg:hover:after {
+        content: attr(title);
+        position: absolute;
+        left: 0;
+}
+
+#UserImg:after {
+    animation: glitchBotom 1.5s linear infinite;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+
 .UserName {
+    background-color: #260d13;
+    padding: 10px;
+    text-align: center;
+    color: #01ffff;
+}
+
+.UserContact {
     background-color: #260d13;
     padding: 10px;
     text-align: center;
 }
 
 .mainpage-rightcol {
-    border: 3px solid #260d13;
     padding: 5px;
     overflow-x: hidden;
     overflow-y: auto;
     height: 1px;
     scroll-behavior: smooth;
+    margin-left: 5px;
+    margin-right: 60px;
 }
 
 .botinfo-Header {
@@ -210,15 +236,19 @@ body {
 h2 {
     font-size: 30px;
     border-bottom: 1px solid;
+    color: #01ffff;
 }
 
 h4 {
     font-size: 20px;
     text-decoration: underline;
+    color: #ffee08;
 }
 
+
 h3 {
-    border-bottom: 3px solid;
+    border-bottom: 3px solid #ff003c;
+    color: #1eed83;
 }
 
 .educ{
@@ -381,4 +411,47 @@ a {
 .section-nav a:hover,
 .section-nav a:focus {
     color: #ffee08;
+}
+
+
+
+@keyframes glitchBotom {
+    2%,64% {
+        transform: translate(-2px,0);
+    }
+
+    4%,60% {
+        transform: translate(-2px,0);
+    }
+
+    62% {
+        transform: translate(-22px,5px) skew(21deg);
+    }
+}
+@keyframes glitchTop {
+    2%,64% {
+        transform: translate(2px,-2px);
+    }
+
+    4%,60% {
+        transform: translate(-2px,2px);
+    }
+
+    62% {
+        transform: translate(13px,-1px) skew(-13deg);
+    }
+}
+
+@keyframes glitch {
+    2%,64% {
+        transform: translate(2px,0) skew(0deg);
+    }
+
+    4%,60% {
+        transform: translate(-2px,0) skew(0deg);
+    }
+
+    62% {
+        transform: translate(0,0) skew(5deg);
+    }
 }
